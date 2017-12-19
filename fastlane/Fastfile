@@ -45,7 +45,7 @@ platform :android do
 
     git_commit(path: ["./*"], message: "build")
 
-    supply(track: “beta”, apk: "app/app-release.apk")
+    supply(track: “beta”, apk: "app/build/outputs/apk/release/app-release-unsigned.apk")
 
 
       # Generate the changelog based on commit messages since your last tag
