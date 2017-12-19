@@ -5,32 +5,37 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: Verifying required fastlane version" time="0.002886249">
+      <testcase classname="fastlane.lanes" name="0: Verifying required fastlane version" time="0.003308852">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: default_platform" time="0.000714416">
+      <testcase classname="fastlane.lanes" name="1: default_platform" time="0.000829082">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="2: gradle" time="1.084344555">
+      <testcase classname="fastlane.lanes" name="2: gradle" time="0.901572632">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="3: gradle" time="2.549085242">
+      <testcase classname="fastlane.lanes" name="3: gradle" time="1.254107157">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="4: changelog_from_git_commits" time="0.006897094">
+      <testcase classname="fastlane.lanes" name="4: git_commit" time="0.012074804">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="5: slack" time="0.592192201">
+      <testcase classname="fastlane.lanes" name="5: changelog_from_git_commits" time="0.006113051">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="6: slack" time="0.494591529">
         
       </testcase>
     
