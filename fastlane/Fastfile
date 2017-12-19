@@ -25,8 +25,13 @@ platform :android do
     #)
   end
 
-    desc "Submit a new Beta Build to Crashlytics Beta"
+    desc "Submit a new Beta Build"
     lane :beta do
+
+    gradle(
+      task: 'increaseVersionCode'
+    )
+
     gradle(
       task: 'assemble',
       build_type: 'Release'
@@ -55,6 +60,8 @@ platform :android do
       end
 
       error do |lane, exception|
+         reset_git_repo
+
          slack(
            message: exception.message,
            channel: “fastlane_test”,

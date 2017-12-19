@@ -22,7 +22,7 @@ xcode-select --install
 ```
 fastlane android beta
 ```
-Submit a new Beta Build to Crashlytics Beta
+Submit a new Beta Build
 
 ----
 
