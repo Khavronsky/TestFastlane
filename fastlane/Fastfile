@@ -38,14 +38,10 @@ platform :android do
     )
 
 #    versionCode = File.read("metadata/versionCode").to_i
-#
-#    f = File.new("metadata/versionCode", "w")
-#    f.write(versionCode)
-#    f.close
 
     git_commit(path: ["./*"], message: "build")
 
-    supply(track: “beta”, apk: "app/build/outputs/apk/release/app-release-unsigned.apk")
+
 
 
       # Generate the changelog based on commit messages since your last tag
