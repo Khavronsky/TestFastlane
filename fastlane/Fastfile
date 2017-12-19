@@ -28,21 +28,24 @@ platform :android do
     desc "Submit a new Beta Build"
     lane :beta do
 
-    #gradle(
-    #  task: 'increaseVersionCode'
-    #)
+    gradle(
+      task: 'increaseVersionCode'
+    )
 
     gradle(
       task: 'assemble',
-      build_type: 'Release',
-      properties: {
-          "versionCode" => 100,
-          "versionName" => "1.0.0",
-
-        }
+      build_type: 'Release'
     )
 
-    git_commit(path: ["./*"], message: "Build release")
+#    versionCode = File.read("metadata/versionCode").to_i
+#
+#    f = File.new("metadata/versionCode", "w")
+#    f.write(versionCode)
+#    f.close
+
+    git_commit(path: ["./*"], message: "build")
+
+    supply(track: “beta”, apk: "app/app-release.apk")
 
 
       # Generate the changelog based on commit messages since your last tag
