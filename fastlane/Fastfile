@@ -49,13 +49,15 @@ platform :android do
         # This block is called, only if the executed lane was successful
 
          slack(
-           message: "Successfully deployed new App Update."
+           message: "Successfully deployed new App Update.",
+           channel: “fastlane_test”,
          )
       end
 
       error do |lane, exception|
          slack(
            message: exception.message,
+           channel: “fastlane_test”,
            success: false
          )
       end
