@@ -34,9 +34,9 @@ platform :android do
 #        #app_folder_name:"app"
 #  )
 
-  #  gradle(
-  #    task: 'increaseVersionCode'
-  #  )
+    gradle(
+      task: 'increaseVersionCode'
+    )
 
     gradle(
       task: 'assemble',
@@ -45,7 +45,7 @@ platform :android do
 
     value = get_version_name(
             gradle_file_path:"app/build.gradle",
-            ext_constant_name:"versionName"
+            ext_constant_name:"versionCode"
             )
 
     git_commit(path: ["./*"], message: value)
