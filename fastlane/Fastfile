@@ -28,9 +28,15 @@ platform :android do
     desc "Submit a new Beta Build"
     lane :beta do
 
-    gradle(
-      task: 'increaseVersionCode'
-    )
+  increment_version_code(
+        gradle_file_path: "app/build.gradle",
+        #ext_constant_name: "test"
+        #app_folder_name:"app"
+  )
+
+  #  gradle(
+  #    task: 'increaseVersionCode'
+  #  )
 
     gradle(
       task: 'assemble',
