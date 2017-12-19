@@ -1,0 +1,50 @@
+# Customize this file, documentation can be found here:
+# https://docs.fastlane.tools/actions/
+# All available actions: https://docs.fastlane.tools/actions
+# can also be listed using the `fastlane actions` command
+
+# Change the syntax highlighting to Ruby
+# All lines starting with a # are ignored when running `fastlane`
+
+# If you want to automatically update fastlane if a new version is available:
+# update_fastlane
+
+# This is the minimum version number required.
+# Update this, if you use features of a newer version
+min_fastlane_version("2.70.0")
+
+default_platform(:android)
+
+platform :android do
+
+  before_all do
+    ENV[“SLACK_URL”] = “https://hooks.slack.com/services/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”
+      slack(
+      channel: “fastlane_test”,
+      message: “test”
+    )
+  end
+
+    desc "Submit a new Beta Build to Crashlytics Beta"
+    lane :beta do
+    gradle(
+      task: 'assemble',
+      build_type: ''
+    )
+
+      # Generate the changelog based on commit messages since your last tag
+      changelog_from_git_commits
+
+
+      #crashlytics
+
+      # sh "your_script.sh"
+      # You can also use other beta testing services here
+    end
+end
+
+# More information about multiple platforms in fastlane: https://docs.fastlane.tools/advanced/#control-configuration-by-lane-and-by-platform
+# All available actions: https://docs.fastlane.tools/actions
+
+# fastlane reports which actions are used. No personal data is recorded.
+# Learn more at https://docs.fastlane.tools/#metrics
