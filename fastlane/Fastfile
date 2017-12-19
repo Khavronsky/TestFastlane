@@ -37,9 +37,12 @@ platform :android do
       build_type: 'Release'
     )
 
-#    versionCode = File.read("metadata/versionCode").to_i
+    value = get_version_name(
+            gradle_file_path:"app/build.gradle",
+            ext_constant_name:"versionName"
+            )
 
-    git_commit(path: ["./*"], message: "build")
+    git_commit(path: ["./*"], message: value)
 
 
 
